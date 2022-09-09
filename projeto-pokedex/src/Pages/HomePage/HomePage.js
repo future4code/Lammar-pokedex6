@@ -21,7 +21,7 @@ function ShowHomePage () {
     const getPokemon = () => {
         setLoadingPokemons(true)
         let endpoints = [];
-        for (let i=1; i<=150; i++) {
+        for (let i=1; i<=20; i++) {
             endpoints.push(`${base_url}${i}/`)
         }
         console.log(endpoints)
@@ -45,7 +45,8 @@ function ShowHomePage () {
         key={pokemon.data.name} 
         name={pokemon.data.name} 
         image={pokemon.data.sprites.front_default} 
-        alt={pokemon.data.name}/>
+        alt={pokemon.data.name}
+        id={pokemon.data.id}/>
     })
 
 
