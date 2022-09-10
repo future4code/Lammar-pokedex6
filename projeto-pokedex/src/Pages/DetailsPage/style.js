@@ -1,24 +1,34 @@
 import styled from "styled-components";
 
-export  const NavPai = styled.nav `
-    display: flex;
-    text-align: center;
-`
-export  const DivImagem = styled.div `
+export const Details = styled.div`
     display: flex;
     flex-direction: column;
+    text-align: center;
+
 `
 
-export const DivHeader = styled.div`
+export  const DivImagem = styled.div `
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    align-self: center;
+    size-adjust:80px;
 
-    button {
-        height: 20px;
-    }
+`
 
-    p {
-        font: bold;
-    }
+
+
+export const CardDetails = styled.div `
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border: 2px solid black;
+    min-width: fit-content;
+    width: 50%;
+    height:40%;
+    text-align: center;
+    margin-right: 25%;
+    margin-left: 25%;
+    background-color:whitesmoke;
+    padding:2px;
+    font-size: 20px;
+
 `

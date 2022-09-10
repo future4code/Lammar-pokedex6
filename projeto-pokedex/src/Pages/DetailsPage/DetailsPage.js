@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import * as MyRoutes from '../../Routes/Coordinator'
 import axios from "axios";
 import { base_url } from "../../constants/constants";
-import { DivHeader, DivImagem, NavPai } from "./style";
+import { DivHeader, DivImagem, Details, CardDetails } from "./style";
 
 function ShowDetailsPage() {
 
@@ -29,47 +29,46 @@ function ShowDetailsPage() {
 
 
     return (
-        <div>
-            <DivHeader>
-                <h1> Página de detalhes do Pokémon </h1>
-                    {pokemonDetails && <p> {pokemonDetails.name} </p>}
-                <button onClick={() => MyRoutes.returnToLastPage(navigate)}> Voltar </button>
-                <button> Adicionar/Remover da Pokédex </button>
-            </DivHeader>
-            <NavPai>
+        <Details>
+           
+            <button onClick={() => MyRoutes.returnToLastPage(navigate)}> Voltar </button>
+                    <h1>{pokemonDetails && <p> {pokemonDetails.name.toUpperCase()} </p>}</h1><br/>
+               
+            <CardDetails>
                 <DivImagem>
                     {pokemonDetails && <img src={pokemonDetails.sprites.front_default}></img>}
                     {pokemonDetails && <img src={pokemonDetails.sprites.back_default}></img>}
                 </DivImagem>
 
-                <div>
-                    <p> Poderes </p>
+                <spam>
+
+               <b><p> Poderes </p></b>
                     {pokemonDetails && <li> {pokemonDetails.stats[0].stat.name}: {pokemonDetails.stats[0].base_stat}</li>}
                     {pokemonDetails && <li> {pokemonDetails.stats[1].stat.name}: {pokemonDetails.stats[1].base_stat}</li>}
                     {pokemonDetails && <li> {pokemonDetails.stats[2].stat.name}: {pokemonDetails.stats[2].base_stat}</li>}
                     {pokemonDetails && <li> {pokemonDetails.stats[3].stat.name}: {pokemonDetails.stats[3].base_stat}</li>}
                     {pokemonDetails && <li> {pokemonDetails.stats[4].stat.name}: {pokemonDetails.stats[4].base_stat}</li>}
                     {pokemonDetails && <li> {pokemonDetails.stats[5].stat.name}: {pokemonDetails.stats[5].base_stat}</li>}
-                </div>
+                </spam>
 
-                <div>
-                    <p> Tipo </p>
+                <spam>
+                    <b><p> Tipo </p></b>
                     {pokemonDetails && <li> {pokemonDetails.types[0].type.name}</li>}
 
-                </div>
+                </spam>
 
-                <div>
-                    <p> Principais Ataques </p>
+                <spam>
+                   <b><p> Principais Ataques </p></b>
                     {pokemonDetails && <li> {pokemonDetails.moves[0].move.name}</li>}
                     {pokemonDetails && <li> {pokemonDetails.moves[1].move.name}</li>}
                     {pokemonDetails && <li> {pokemonDetails.moves[2].move.name}</li>}
                     {pokemonDetails && <li> {pokemonDetails.moves[3].move.name}</li>}
-                </div>
-            </NavPai>
+                </spam>
+                </CardDetails>
+                <button> Adicionar/Remover da Pokédex </button>
 
-
-
-        </div>
+</Details>
+        
     )
 }
 

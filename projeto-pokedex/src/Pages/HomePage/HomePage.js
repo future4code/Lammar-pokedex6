@@ -8,6 +8,7 @@ import axios from "axios";
 import { PokemonList, HomePage, LoadingIcon} from "./style";
 import Loading from 'react-loading'
 
+
 function ShowHomePage () {
 
     const navigate = useNavigate()
@@ -52,7 +53,8 @@ function ShowHomePage () {
 
     return (
         <HomePage>
-            <h1> Página Inicial </h1>
+       
+           
             <button onClick={() => MyRoutes.goToPokedexPage(navigate)}> Ver Pokédex </button>
             <LoadingIcon>{loadingPokemons && <Loading type={"spinningBubbles"} color={"red"} height={'10%'} width={'10%'} />}</LoadingIcon>           
             <PokemonList>

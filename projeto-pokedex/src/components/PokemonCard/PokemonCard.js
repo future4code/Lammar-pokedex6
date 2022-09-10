@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function PokemonCard ({name, image, id}) {
     const navigate = useNavigate()
     return (
-        <Card>
+        <Card >
             <div> {name} </div>
             <img src={image} alt={name}></img>
             <button>Adicionar</button>

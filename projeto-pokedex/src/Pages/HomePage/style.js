@@ -21,3 +21,5 @@ export const LoadingIcon =styled.div`
     text-align: center;
     margin-top: 1em;
 `
+
+
