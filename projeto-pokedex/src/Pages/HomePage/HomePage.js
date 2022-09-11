@@ -5,11 +5,11 @@ import * as MyRoutes from '../../Routes/Coordinator'
 import { base_url } from "../../constants/constants";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import axios from "axios";
-import { PokemonList, HomePage, LoadingIcon} from "./style";
+import { PokemonList, HomePage, LoadingIcon, Button } from "./style";
 import Loading from 'react-loading'
 
 
-function ShowHomePage () {
+function ShowHomePage() {
 
     const navigate = useNavigate()
     const [pokemons, setPokemons] = useState([])
@@ -22,7 +22,7 @@ function ShowHomePage () {
     const getPokemon = () => {
         setLoadingPokemons(true)
         let endpoints = [];
-        for (let i=1; i<=20; i++) {
+        for (let i = 1; i <= 20; i++) {
             endpoints.push(`${base_url}${i}/`)
         }
         console.log(endpoints)
@@ -33,30 +33,31 @@ function ShowHomePage () {
                 setPokemons(res)
                 setLoadingPokemons(false)
             })
-            .catch ((error) => {
+            .catch((error) => {
                 console.log(error)
                 setLoadingPokemons(false)
             })
-        
-    }
-    
 
-    const renderPokemonsList = pokemons&&pokemons.map((pokemon) => {
-        return <PokemonCard 
-        key={pokemon.data.name} 
-        name={pokemon.data.name} 
-        image={pokemon.data.sprites.front_default} 
-        alt={pokemon.data.name}
-        id={pokemon.data.id}/>
+    }
+
+
+    const renderPokemonsList = pokemons && pokemons.map((pokemon) => {
+        return <PokemonCard
+            key={pokemon.data.name}
+            name={pokemon.data.name}
+            image={pokemon.data.sprites.front_default}
+            alt={pokemon.data.name}
+            id={pokemon.data.id} />
     })
 
 
     return (
         <HomePage>
-       
-           
-            <button onClick={() => MyRoutes.goToPokedexPage(navigate)}> Ver Pokédex </button>
-            <LoadingIcon>{loadingPokemons && <Loading type={"spinningBubbles"} color={"red"} height={'10%'} width={'10%'} />}</LoadingIcon>           
+
+
+            <Button onClick={() => MyRoutes.goToPokedexPage(navigate)}> Ver Pokédex </Button>
+
+            <LoadingIcon>{loadingPokemons && <Loading type={"spinningBubbles"} color={"red"} height={'10%'} width={'10%'} />}</LoadingIcon>
             <PokemonList>
                 {!loadingPokemons && renderPokemonsList}
             </PokemonList>
