@@ -8,7 +8,7 @@ export const HomePage = styled.div `
 
 export const Button = styled.button`
     width: 150px;
-    margin-left: 42px;
+    margin-left: 3vh;
 `
 
 export const PokemonList = styled.div `
