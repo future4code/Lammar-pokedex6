@@ -12,4 +12,4 @@ O que funciona:
 - Página de detalhes do pokemons;
 
 O que não funciona: 
-- Não foi realizado a opção de adicionar/remover os pokemons da Pokedex
+- Não foi realizada a opção de adicionar/remover os pokemons da Pokedex
