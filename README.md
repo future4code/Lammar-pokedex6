@@ -5,12 +5,11 @@ Nome dos integrantes:
 - Vinício Cassimiro Oliveira
 - Wener Simonassi Borges Pacheco
 
-Link do Surge: www.link.com.br
+Link do Surge: https://subdued-club.surge.sh/
 
 O que funciona:
-- Item 1
-- Item 2
+- Renderização de pokemons na página inicial;
+- Página de detalhes do pokemons;
 
 O que não funciona: 
-- Item 3
-- Item 4
+- Não foi realizado a opção de adicionar/remover os pokemons da Pokedex
