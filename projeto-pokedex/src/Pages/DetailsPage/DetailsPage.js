@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import * as MyRoutes from '../../Routes/Coordinator'
 import axios from "axios";
 import { base_url } from "../../constants/constants";
-import { DivHeader, DivImagem, Details, CardDetails } from "./style";
+import { DivHeader, DivImagem, Details, CardDetails} from "./style";
 
 function ShowDetailsPage() {
 
@@ -30,10 +30,11 @@ function ShowDetailsPage() {
 
     return (
         <Details>
-           
+
             <button onClick={() => MyRoutes.returnToLastPage(navigate)}> Voltar </button>
-                    <h1>{pokemonDetails && <p> {pokemonDetails.name.toUpperCase()} </p>}</h1><br/>
-               
+
+            <h1>{pokemonDetails && <p> {pokemonDetails.name.toUpperCase()} </p>}</h1><br />
+
             <CardDetails>
                 <DivImagem>
                     {pokemonDetails && <img src={pokemonDetails.sprites.front_default}></img>}
@@ -42,7 +43,7 @@ function ShowDetailsPage() {
 
                 <spam>
 
-               <b><p> Poderes </p></b>
+                    <b><p> Poderes </p></b>
                     {pokemonDetails && <li> {pokemonDetails.stats[0].stat.name}: {pokemonDetails.stats[0].base_stat}</li>}
                     {pokemonDetails && <li> {pokemonDetails.stats[1].stat.name}: {pokemonDetails.stats[1].base_stat}</li>}
                     {pokemonDetails && <li> {pokemonDetails.stats[2].stat.name}: {pokemonDetails.stats[2].base_stat}</li>}
@@ -58,17 +59,17 @@ function ShowDetailsPage() {
                 </spam>
 
                 <spam>
-                   <b><p> Principais Ataques </p></b>
+                    <b><p> Principais Ataques </p></b>
                     {pokemonDetails && <li> {pokemonDetails.moves[0].move.name}</li>}
                     {pokemonDetails && <li> {pokemonDetails.moves[1].move.name}</li>}
                     {pokemonDetails && <li> {pokemonDetails.moves[2].move.name}</li>}
                     {pokemonDetails && <li> {pokemonDetails.moves[3].move.name}</li>}
                 </spam>
-                </CardDetails>
-                <button> Adicionar/Remover da Pokédex </button>
+            </CardDetails>
+            <button> Adicionar/Remover da Pokédex </button>
 
-</Details>
-        
+        </Details>
+
     )
 }
 

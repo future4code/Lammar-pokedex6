@@ -6,6 +6,11 @@ export const HomePage = styled.div `
     text-align: center;
 `
 
+export const Button = styled.button`
+    width: 150px;
+    margin-left: 3vh;
+`
+
 export const PokemonList = styled.div `
     display: flex;
     flex-direction: row;

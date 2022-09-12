@@ -14,8 +14,6 @@ export  const DivImagem = styled.div `
 
 `
 
-
-
 export const CardDetails = styled.div `
     display: flex;
     flex-direction: column;
@@ -27,6 +25,7 @@ export const CardDetails = styled.div `
     text-align: center;
     margin-right: 25%;
     margin-left: 25%;
+    margin-bottom: 1%;
     background-color:whitesmoke;
     padding:2px;
     font-size: 20px;
