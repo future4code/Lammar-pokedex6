@@ -44,8 +44,8 @@ function ShowHomePage() {
     const renderPokemonsList = pokemons && pokemons.map((pokemon) => {
         return <PokemonCard
             key={pokemon.data.name}
-            name={pokemon.data.name}
-            image={pokemon.data.sprites.front_default}
+            name={pokemon.data.name.toUpperCase()}
+            image={pokemon.data.sprites.other.home.front_default}
             alt={pokemon.data.name}
             id={pokemon.data.id} />
     })

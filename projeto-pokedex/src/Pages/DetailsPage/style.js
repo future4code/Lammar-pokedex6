@@ -9,18 +9,25 @@ export const Details = styled.div`
 
 export  const DivImagem = styled.div `
     display: flex;
+    flex-direction: column;
+    border: 1px solid black;
     align-self: center;
     size-adjust:80px;
+    justify-content: center;
+    align-items: center;
 
+    img {
+        width: 10vw;
+    }
 `
 
 export const CardDetails = styled.div `
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-self: center;
     border: 2px solid black;
     min-width: fit-content;
-    width: 50%;
+    width: 60%;
     height:40%;
     text-align: center;
     margin-right: 25%;
@@ -30,4 +37,14 @@ export const CardDetails = styled.div `
     padding:2px;
     font-size: 20px;
 
+    span {
+        border: 1px solid black;
+    }
+
+    li {
+        list-style-type: none;
+        text-align: left;   
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
 `

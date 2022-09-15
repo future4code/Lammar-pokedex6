@@ -7,13 +7,12 @@ export function Header() {
         <Flex p="5" gap="1" bg="blue.900">
        
             <Image 
-             boxSize='80%'
+             boxSize='20%'
              objectFit='cover' 
              align='center'
              justify='center' 
                
             src={logo}/>
-           
            </Flex>
     )
 }
