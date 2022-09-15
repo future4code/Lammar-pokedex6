@@ -37,11 +37,11 @@ function ShowDetailsPage() {
 
             <CardDetails>
                 <DivImagem>
-                    {pokemonDetails && <img src={pokemonDetails.sprites.front_default}></img>}
-                    {pokemonDetails && <img src={pokemonDetails.sprites.back_default}></img>}
+                    {pokemonDetails && <img src={pokemonDetails.sprites.versions["generation-v"]["black-white"].animated.front_default}></img>}
+                    {pokemonDetails && <img src={pokemonDetails.sprites.versions["generation-v"]["black-white"].animated.back_default}></img>}
                 </DivImagem>
 
-                <spam>
+                <span>
 
                     <b><p> Poderes </p></b>
                     {pokemonDetails && <li> {pokemonDetails.stats[0].stat.name}: {pokemonDetails.stats[0].base_stat}</li>}
@@ -50,21 +50,26 @@ function ShowDetailsPage() {
                     {pokemonDetails && <li> {pokemonDetails.stats[3].stat.name}: {pokemonDetails.stats[3].base_stat}</li>}
                     {pokemonDetails && <li> {pokemonDetails.stats[4].stat.name}: {pokemonDetails.stats[4].base_stat}</li>}
                     {pokemonDetails && <li> {pokemonDetails.stats[5].stat.name}: {pokemonDetails.stats[5].base_stat}</li>}
-                </spam>
+                </span>
 
-                <spam>
+                <span>
                     <b><p> Tipo </p></b>
-                    {pokemonDetails && <li> {pokemonDetails.types[0].type.name}</li>}
 
-                </spam>
+                    {pokemonDetails &&  pokemonDetails.types.map((type) => { 
+                        return (
+                            <li key={type.type.name}> {type.type.name} </li>
+                        )
+                    })}
 
-                <spam>
+                </span>
+
+                <span>
                     <b><p> Principais Ataques </p></b>
                     {pokemonDetails && <li> {pokemonDetails.moves[0].move.name}</li>}
                     {pokemonDetails && <li> {pokemonDetails.moves[1].move.name}</li>}
                     {pokemonDetails && <li> {pokemonDetails.moves[2].move.name}</li>}
                     {pokemonDetails && <li> {pokemonDetails.moves[3].move.name}</li>}
-                </spam>
+                </span>
             </CardDetails>
             <button> Adicionar/Remover da Pokédex </button>
 
