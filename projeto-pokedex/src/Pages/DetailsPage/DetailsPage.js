@@ -10,7 +10,6 @@ function ShowDetailsPage() {
     const navigate = useNavigate()
     const pathParams = useParams()
     const [pokemonDetails, setPokemonDetails] = useState(undefined)
-    const [pokemonTypes, setPokemonTypes] = useState(undefined)
 
     useEffect(() => {
         getPokemonDetails()

@@ -9,11 +9,22 @@ import { PokemonList, HomePage, LoadingIcon, Button } from "./style";
 import Loading from 'react-loading'
 
 
-function ShowHomePage() {
+function ShowHomePage({pokedex, setPokedex, pokemons, setPokemons}) {
 
     const navigate = useNavigate()
-    const [pokemons, setPokemons] = useState([])
+    
     const [loadingPokemons, setLoadingPokemons] = useState(undefined)
+
+    const addToPokedex = (pokemon) => {
+        const newPokedex = [...pokedex]
+        newPokedex.push({...pokemon})
+        setPokedex(newPokedex)
+
+        const newPokemonList = [...pokemons]
+        const index = newPokemonList.indexOf(pokemon)
+        newPokemonList.splice(index, 1)
+        setPokemons(newPokemonList)
+    }
 
     useEffect(() => {
         getPokemon()
@@ -44,10 +55,8 @@ function ShowHomePage() {
     const renderPokemonsList = pokemons && pokemons.map((pokemon) => {
         return <PokemonCard
             key={pokemon.data.name}
-            name={pokemon.data.name.toUpperCase()}
-            image={pokemon.data.sprites.other.home.front_default}
-            alt={pokemon.data.name}
-            id={pokemon.data.id} />
+            pokemon = {pokemon}
+            addToPokedex= {addToPokedex}/>
     })
 
 
@@ -61,6 +70,7 @@ function ShowHomePage() {
             <PokemonList>
                 {!loadingPokemons && renderPokemonsList}
             </PokemonList>
+
         </HomePage>
     )
 }
