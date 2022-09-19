@@ -26,6 +26,10 @@ export const Card = styled.div `
         padding-right: 1em;
         padding-left: 1em;
     }
+    
+    button:hover {
+        background-color: #63B3ED;
+    }
 
     div {
         font-size: 1em;
